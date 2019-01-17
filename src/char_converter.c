@@ -15,6 +15,27 @@
 #include "shared_func.h"
 #include "char_converter.h"
 
+uint ip_char_convert_int(char *ipstr) 
+{ 
+  if (ipstr == NULL) return 0; 
+ 
+  char *token; 
+  uint i = 3, total = 0, cur; 
+ 
+  token = strtok(ipstr, "."); 
+ 
+  while (token != NULL) { 
+    cur = atoi(token); 
+    if (cur >= 0 && cur <= 255) { 
+      total += cur * pow(256, i); 
+    } 
+    i --; 
+    token = strtok(NULL, "."); 
+  } 
+ 
+  return total; 
+} 
+
 int char_converter_init_ex(FastCharConverter *pCharConverter,
         const FastCharPair *charPairs, const int count,
         const unsigned op)
