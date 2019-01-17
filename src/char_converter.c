@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <math.h>
 #include <errno.h>
 #include "logger.h"
 #include "shared_func.h"
