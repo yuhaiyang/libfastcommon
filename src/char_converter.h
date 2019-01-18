@@ -55,7 +55,7 @@ typedef struct fast_char_converter
  *           ipstr: the char converter
  *  return: ip address(int)
 */
-int ip_char_convert_int(char *ipstr);
+uint ip_char_convert_int(char *ipstr);
 
 /**
  *  char converter init function
